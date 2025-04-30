@@ -1,0 +1,15 @@
+#mainNavbar {
+    transition: all 0.3s ease-in-out;
+    height: 50px; /* hauteur réduite */
+    overflow: hidden;
+}
+
+.hidden-navbar {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+  
+
+.reveal-navbar {
+  top: 0;
+}

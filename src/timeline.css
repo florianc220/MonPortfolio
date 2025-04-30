@@ -1,0 +1,139 @@
+/* Timeline */
+
+/* La ligne verticale de la timeline */
+.main-timeline-2 {
+    position: relative;
+  }
+  
+  /* Ligne verticale centrale */
+  .main-timeline-2::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    background-color: #26c6da; /* Couleur de la ligne */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Conteneur de chaque événement */
+  .timeline-2 {
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    padding-bottom: 30px; /* Espacement en bas */
+  }
+  
+  /* Cercles sur la timeline */
+  .timeline-2::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -11px;
+    background-color: #26c6da;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Position des événements à gauche */
+  .left-2 {
+    padding: 0px 40px 20px 0px;
+    left: 0;
+  }
+  
+  /* Position des événements à droite */
+  .right-2 {
+    padding: 0px 0px 20px 40px;
+    left: 50%;
+  }
+  
+  /* Ajouter des flèches pointant vers la droite pour les événements à gauche */
+  .left-2::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  /* Ajouter des flèches pointant vers la gauche pour les événements à droite */
+  .right-2::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  /* Ajuster la position des cercles pour les événements à droite */
+  .right-2::after {
+    left: -14px;
+  }
+  
+  /* Style de la carte d'événements */
+  .card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Design des cartes d'événements */
+  .card-body {
+    padding: 30px;
+  }
+  
+  .card-img-top {
+    border-radius: 10px 10px 0 0;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Espacement pour le titre et le texte de la carte */
+  .card-body h4 {
+    font-weight: bold;
+  }
+  
+  .card-body p {
+    color: #333333;
+  }
+  
+  /* Media queries - Responsive pour la timeline sur des écrans plus petits */
+  @media screen and (max-width: 600px) {
+    .main-timeline-2::after {
+      left: 31px;
+    }
+  
+    .timeline-2 {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+  
+    .timeline-2::before {
+      left: 60px;
+      border-width: 10px 10px 10px 0;
+    }
+  
+    .left-2::after,
+    .right-2::after {
+      left: 18px;
+    }
+  
+    .left-2::before {
+      right: auto;
+    }
+  
+    .right-2 {
+      left: 0%;
+    }
+  }
+  
